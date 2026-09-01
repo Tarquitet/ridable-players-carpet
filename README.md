@@ -8,6 +8,15 @@
 
 A lightweight, vanilla-friendly Scarpet script that allows players to ride on top of other players in vertical stacks. Inspired by the mechanics of **FSit** and **FSit Continued** mods, but built entirely with Carpet's Scarpet API.
 
+## 🎬 Demo
+
+<div align="center">
+  <a href="https://youtu.be/etgxicrdKrk" target="_blank">
+    <img src="https://img.youtube.com/vi/etgxicrdKrk/maxresdefault.jpg" alt="Ridable Players Demo" width="600" style="border-radius: 12px; box-shadow: 0 8px 16px rgba(0,0,0,0.3); transition: transform 0.2s;">
+  </a>
+  <p><em>Note: This video showcases an early development version of the script. The current release includes significant improvements in stability, crash protection, and stack reorganization.</em></p>
+</div>
+
 ## ✨ Features
 
 - 🏗️ **Vertical Stacking**: Right-click another player to mount on top of them. Multiple players can stack infinitely (up to a safe limit).
@@ -72,8 +81,9 @@ This project is licensed under the **MIT License**. You are free to use, modify,
 
 ## 🐛 Issues & Contributions
 
-Found a bug or have a feature request? Please open an issue on the [GitHub Issues](https://github.com/Tarquitet/Ridable-Players-Scarpet/issues) page!  
+Found a bug or have a feature request? Please open an issue on the [GitHub Issues](https://github.com/Tarquitet/Ridable-Players-Scarpet/issues) page! (only fixed at the moment)  
 Contributions and Pull Requests are always welcome. Please read [CONTRIBUTING.md](CONTRIBUTING8.md) before submitting.
+Figuring out how to developing into a datapack (if someone don't want a carpet script or more vanilly friendly).
 
 ---
 *Made with ❤️ for the Minecraft community.*
