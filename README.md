@@ -1,4 +1,4 @@
-# 🧍‍♂️ Ridable Players - Scarpet
+# Ridable Players - Scarpet
 
 [![Minecraft](https://img.shields.io/badge/Minecraft-1.20+-green?logo=minecraft)](https://www.minecraft.net/)
 [![Carpet](https://img.shields.io/badge/Carpet-Script-green?logo=github)](https://github.com/gnembon/fabric-carpet)
