@@ -61,6 +61,13 @@ A lightweight, vanilla-friendly Scarpet script that allows players to ride on to
 - **Teleportation**: If the root player teleports a long distance (e.g., Ender Pearl, Chorus Fruit), Minecraft's vanilla mechanics may temporarily dismount riders. They will need to remount.
 - **Dimension Changes**: When the root player changes dimensions (e.g., Nether Portal), the stack reorganizes in the original dimension (riders do not teleport with the root). This is an intentional, vanilla-friendly fallback.
 - **Height Limit**: The script safely caps stack tracking at 20 players to prevent performance issues.
+- **Seat Desynchronization (Visual Jitter)**: You may notice a slight visual delay or "jitter" on the armor stand seats when the root player moves, especially at high speeds or with fast turns. This is **not a bug** — it is an inherent limitation of how Minecraft's client-server architecture works:
+  - The server updates the seat position via teleport (`modify pos`) each tick, and the client interpolates the movement. This creates a natural 1-2 tick delay between the root player's movement and the seat's visual update.
+  - **Why not use smooth interpolation or quaternions?** Minecraft entities do not expose quaternion rotation or client-side interpolation controls through Scarpet. The only available options are:
+    - **Teleport per tick** (current approach): Precise but has minor visual jitter.
+    - **Velocity-based movement** (`modify velocity`): Smoother visually but causes overshoot, oscillation, and is unreliable with gravity/collisions.
+    - **Native passenger mounting** (armor stand riding the player): Perfect sync but locks the seat to a fixed body offset — no control over stack height.
+  - After extensive testing, **per-tick teleportation** was chosen as the best balance between precision, reliability, and performance. The jitter is minimal during normal walking and only noticeable during fast movement or elytra flight.
 
 ## 🛠️ Technical Details
 
