@@ -4,6 +4,7 @@ __config() -> {
 };
 
 global_debug = true;
+global_tick = 0;
 
 global_child = {};
 global_parent = {};
@@ -47,10 +48,29 @@ _detach_by_uuid(ru) -> (
     );
 );
 
-_drop_all_above(ru) -> (
-    while(has(global_child, ru),
-        _detach_by_uuid(global_child:ru)
-    )
+_promote_first(root_u) -> (
+    first_u = global_child:root_u;
+    if (first_u == null, (
+        delete(global_child, root_u);
+        delete(global_parent, root_u);
+        delete(global_seats, root_u);
+        return()
+    ));
+    seat = global_seats:first_u;
+    if (seat != null, modify(seat, 'remove'));
+    delete(global_seats, first_u);
+    delete(global_parent, first_u);
+    delete(global_child, root_u);
+    delete(global_parent, root_u);
+    delete(global_seats, root_u);
+);
+
+_sweep_orphans() -> (
+    known = {};
+    for(values(global_seats), known:(_ ~ 'uuid') = true);
+    for(entity_selector('@e[type=minecraft:armor_stand,tag=fsitseat]'), (
+        if (!has(known, _ ~ 'uuid'), modify(_, 'remove'))
+    ))
 );
 
 _attach(rider, base_player) -> (
@@ -85,6 +105,18 @@ _attach(rider, base_player) -> (
 );
 
 __on_tick() -> (
+    global_tick = global_tick + 1;
+    if (global_tick % 200 == 0, _sweep_orphans());
+
+    for(player('all'), (
+        q = _;
+        qu = q ~ 'uuid';
+        if (has(global_parent, qu), (
+            root_u = _find_root(qu);
+            if (_find_player(root_u) == null, _promote_first(root_u))
+        ))
+    ));
+
     for(player('all'),
         p = _;
         pu = p ~ 'uuid';
@@ -99,7 +131,7 @@ __on_tick() -> (
                 seat = global_seats:child_u;
 
                 if (root ~ 'sneaking' && h == 1,
-                    _detach_by_uuid(child_u);
+                    _promote_first(pu);
                     break();
                 );
 
@@ -134,14 +166,8 @@ __on_player_interacts_with_entity(player, entity, hand) -> (
 
 __on_player_changes_dimension(player, from_pos, from_dim, to_pos, to_dim) -> (
     pu = player ~ 'uuid';
-    _drop_all_above(pu);
-    _detach_by_uuid(pu);
-);
-
-__on_player_leaves(player) -> (
-    pu = player ~ 'uuid';
-    _drop_all_above(pu);
-    _detach_by_uuid(pu);
+    if (has(global_child, pu), _promote_first(pu));
+    if (has(global_parent, pu), _detach_by_uuid(pu));
 );
 
 toggle_debug() -> (
