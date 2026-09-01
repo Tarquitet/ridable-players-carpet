@@ -88,9 +88,12 @@ This project is licensed under the **MIT License**. You are free to use, modify,
 
 ## 🐛 Issues & Contributions
 
-Found a bug or have a feature request? Please open an issue on the [GitHub Issues](https://github.com/Tarquitet/Ridable-Players-Scarpet/issues) page! (only fixed at the moment)  
-Contributions and Pull Requests are always welcome. Please read [CONTRIBUTING.md](CONTRIBUTING8.md) before submitting.
-Figuring out how to developing into a datapack (if someone don't want a carpet script or more vanilly friendly).
+- Found a bug or have a feature request? Please open an issue on the [GitHub Issues](https://github.com/Tarquitet/Ridable-Players-Scarpet/issues) page! (only fixed at the moment)  
+- Contributions and Pull Requests are always welcome. Please read [CONTRIBUTING.md](CONTRIBUTING8.md) before submitting.
+
+## TO-DO
+- Figuring out how to developing into a datapack (if someone don't want a carpet script or more vanilly friendly).
+- What item can be used to replace that "right-click" from scarpet?
 
 ---
 *Made with ❤️ for the Minecraft community.*
