@@ -22,6 +22,7 @@ A lightweight, vanilla-friendly Scarpet script that allows players to ride on to
 ## Example image
 <div align="center">
 <img width="685" height="377" alt="{ADB135A3-3C68-4F51-AF54-28EB29525E2B}" src="https://github.com/user-attachments/assets/253b32e1-2238-4cd0-98d7-6baa4c10dda6" />
+<p><em>Note: This is a screenshot from an early version. But you can see the main idea of this little project :)</em></p>
 </div>
 
 ## 🎬 Demo
