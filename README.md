@@ -75,6 +75,20 @@ A lightweight, vanilla-friendly Scarpet script that allows players to ride on to
     - **Velocity-based movement** (`modify velocity`): Smoother visually but causes overshoot, oscillation, and is unreliable with gravity/collisions.
     - **Native passenger mounting** (armor stand riding the player): Perfect sync but locks the seat to a fixed body offset — no control over stack height.
   - After extensive testing, **per-tick teleportation** was chosen as the best balance between precision, reliability, and performance. The jitter is minimal during normal walking and only noticeable during fast movement or elytra flight.
+ 
+<details>
+<summary>💡 <strong>The Vision: Why build this instead of just using the FSit mod?</strong></summary>
+<br>
+<p>This project was born out of a specific challenge for the <strong>Builtechraft</strong> server. My vision has always been to push the boundaries of what is possible in <em>pure vanilla Minecraft</em> using Datapacks and Scarpet, reducing the community's reliance on client-side mods.</p>
+
+<p>Recreating a feature like "player riding" is trivial for a mod, but a massive technical hurdle for a server-side script. Mods have access to client-side interpolation, custom entity mounting, and deep engine hooks. Scarpet, on the other hand, has to fight against Minecraft's vanilla mechanics (like entities forcefully dismounting on teleport, or the lack of smooth movement APIs).</p>
+
+<p>Building this script was about solving those exact puzzles: using efficient data structures (like linked lists for stack management), implementing crash-proof cycle detection, and creating smart fallbacks for dimension changes. </p>
+
+<p><strong>The result?</strong> A "mod-like" experience that requires <em>zero</em> downloads, <em>zero</em> modpacks, and <em>zero</em> client-side changes for the players. It proves that with creativity and deep knowledge of the game's mechanics, Datapacks and Scarpet can deliver sophisticated features while keeping the soul of Minecraft 100% intact.</p>
+</details>
+<br>
+
 
 ## 🛠️ Technical Details
 
@@ -104,16 +118,3 @@ This project is licensed under the **MIT License**. You are free to use, modify,
 
 ---
 *Made with ❤️ for the Minecraft community.*
----
-<details>
-<summary>💡 <strong>The Vision: Why build this instead of just using the FSit mod?</strong></summary>
-<br>
-<p>This project was born out of a specific challenge for the <strong>Builtechraft</strong> server. My vision has always been to push the boundaries of what is possible in <em>pure vanilla Minecraft</em> using Datapacks and Scarpet, reducing the community's reliance on client-side mods.</p>
-
-<p>Recreating a feature like "player riding" is trivial for a mod, but a massive technical hurdle for a server-side script. Mods have access to client-side interpolation, custom entity mounting, and deep engine hooks. Scarpet, on the other hand, has to fight against Minecraft's vanilla mechanics (like entities forcefully dismounting on teleport, or the lack of smooth movement APIs).</p>
-
-<p>Building this script was about solving those exact puzzles: using efficient data structures (like linked lists for stack management), implementing crash-proof cycle detection, and creating smart fallbacks for dimension changes. </p>
-
-<p><strong>The result?</strong> A "mod-like" experience that requires <em>zero</em> downloads, <em>zero</em> modpacks, and <em>zero</em> client-side changes for the players. It proves that with creativity and deep knowledge of the game's mechanics, Datapacks and Scarpet can deliver sophisticated features while keeping the soul of Minecraft 100% intact.</p>
-</details>
-<br>
