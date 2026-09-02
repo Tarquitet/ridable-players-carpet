@@ -1,4 +1,4 @@
-# Ridable Players - Scarpet
+# 🧍‍♂️ Ridable Players - Scarpet
 
 [![Minecraft](https://img.shields.io/badge/Minecraft-1.20+-green?logo=minecraft)](https://www.minecraft.net/)
 [![Carpet](https://img.shields.io/badge/Carpet-Script-green?logo=github)](https://github.com/gnembon/fabric-carpet)
@@ -6,115 +6,122 @@
 [![Release](https://img.shields.io/github/v/release/Tarquitet/Ridable-Players-Scarpet?color=orange)](https://github.com/Tarquitet/Ridable-Players-Scarpet/releases)
 [![Downloads](https://img.shields.io/github/downloads/Tarquitet/Ridable-Players-Scarpet/total?color=yellow)](https://github.com/Tarquitet/Ridable-Players-Scarpet/releases)
 
-A lightweight, vanilla-friendly Scarpet script that allows players to ride on top of other players in vertical stacks. Inspired by the mechanics of **FSit** and **FSit Continued** mods, but built entirely with Carpet's Scarpet API.
+A lightweight, vanilla-friendly Scarpet script that allows players to ride on top of other players in vertical stacks. Inspired by **FSit** and **FSit Continued**, but built entirely with Carpet's Scarpet API.
+
+---
 
 ## ✨ Features
 
-- 🏗️ **Vertical Stacking**: Right-click another player to mount on top of them. Multiple players can stack infinitely (up to a safe limit).
-- 🎯 **Smart Following**: The entire stack dynamically follows the root player (the one at the bottom) with smooth positional updates.
-- ⬇️ **Shift to Dismount**: Press `Shift` to safely get off the stack.
-- 🔄 **Auto-Reorganization**: If the root player shifts or disconnects, the first rider automatically becomes the new root, keeping the stack intact.
-- 🛡️ **Crash Protection**: Built-in anti-cycle detection prevents players from mounting their own stack, avoiding infinite loops and server crashes.
-- 🧹 **Auto-Cleanup**: Automatically detects and removes orphaned armor stands every 10 seconds to keep the world clean.
-- 🌍 **Vanilla-Friendly**: No client-side mods required. Works seamlessly on any server running the Carpet mod.
+| Feature | Description |
+| :--- | :--- |
+| 🏗️ **Vertical Stacking** | Right-click to mount. Multiple players can stack safely up to a defined limit. |
+| 🎯 **Smart Following** | The entire stack dynamically follows the root player with precise positional updates. |
+| ⬇️ **Shift to Dismount** | Press `Shift` to safely get off the stack and return to the ground. |
+| 🔄 **Auto-Reorganization** | If the root player shifts or disconnects, the first rider automatically becomes the new root. |
+| 🛡️ **Crash Protection** | Built-in anti-cycle detection prevents mounting your own stack, avoiding infinite loops. |
+| 🧹 **Auto-Cleanup** | Detects and removes orphaned armor stands every 10 seconds to keep the world clean. |
+| 🌍 **100% Vanilla-Friendly** | Zero client-side mods required. Works seamlessly on any server running the Carpet mod. |
 
 ---
-## Example image
+
+## 📸 Showcase
+
 <div align="center">
-<img width="685" height="377" alt="{ADB135A3-3C68-4F51-AF54-28EB29525E2B}" src="https://github.com/user-attachments/assets/253b32e1-2238-4cd0-98d7-6baa4c10dda6" />
-<p><em>Note: This is a screenshot from an early version. But you can see the main idea of this little project :)</em></p>
+  <img width="685" alt="Ridable Players Early Screenshot" src="https://github.com/user-attachments/assets/253b32e1-2238-4cd0-98d7-6baa4c10dda6" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);"/>
+  <p><em>Early concept screenshot showcasing the core stacking mechanic.</em></p>
 </div>
 
-## 🎬 Demo
+<br>
 
 <div align="center">
   <a href="https://youtu.be/etgxicrdKrk" target="_blank">
     <img src="https://img.youtube.com/vi/etgxicrdKrk/maxresdefault.jpg" alt="Ridable Players Demo" width="600" style="border-radius: 12px; box-shadow: 0 8px 16px rgba(0,0,0,0.3); transition: transform 0.2s;">
   </a>
-  <p><em>Note: This video showcases an early development version of the script. The current release includes significant improvements in stability, crash protection, and stack reorganization.</em></p>
+  <p><em>Watch the script in action (early development version). Current release includes major stability improvements.</em></p>
 </div>
 
-## 📋 Requirements
+---
 
-- **Minecraft**: 1.20 or higher
-- **Mod Loader**: Fabric
-- **Dependency**: [Carpet Mod](https://www.curseforge.com/minecraft/mc-mods/carpet) (Scarpet API must be enabled)
+## 📋 Requirements & Installation
 
-## 🚀 Installation
+| Requirement | Detail |
+| :--- | :--- |
+| **Minecraft** | 1.20 or higher |
+| **Mod Loader** | Fabric |
+| **Dependency** | [Carpet Mod](https://www.curseforge.com/minecraft/mc-mods/carpet) (Scarpet API enabled) |
 
-1. Download the latest `ride-players.sc` file from the [Releases](https://github.com/Tarquitet/Ridable-Players-Scarpet/releases) page.
-2. Place the file inside your world's `scripts/` folder:  
-   `.minecraft/saves/<your_world>/scripts/ride-players.sc`
-3. Load the script in-game by running:
-   ```mcfunction
-   /script load ride-players
-   ```
+**Installation Steps:**
+1. Download the latest `ride-players.sc` from [Releases](https://github.com/Tarquitet/Ridable-Players-Scarpet/releases).
+2. Place it in your world's scripts folder: `.minecraft/saves/<your_world>/scripts/`
+3. Load it in-game: `/script load ride-players`
+
+---
 
 ## 🎮 How to Use
 
 | Action | Result |
 | :--- | :--- |
-| **Right-click a player** (with empty hand) | You mount on top of them. |
+| **Right-click a player** (empty hand) | You mount on top of them. |
 | **Right-click a player in a stack** | You mount at the very top of their stack. |
 | **Press `Shift`** (while riding) | You dismount and fall to the ground. |
 | **Root player presses `Shift`** | The stack reorganizes: the first rider becomes the new root. |
 
-### 💡 Pro Tips
-- To build a tower: Player A stands still. Player B right-clicks A. Player C right-clicks B (or A).
-- Use `/script in ride-players run clear_all()` if you ever need to forcefully remove all seats and reset the system.
+> 💡 **Pro Tip:** Use `/script in ride-players run clear_all()` to forcefully remove all seats and reset the system if needed.
 
-## ⚠️ Limitations
+---
 
-- **Teleportation**: If the root player teleports a long distance (e.g., Ender Pearl, Chorus Fruit), Minecraft's vanilla mechanics may temporarily dismount riders. They will need to remount.
-- **Dimension Changes**: When the root player changes dimensions (e.g., Nether Portal), the stack reorganizes in the original dimension (riders do not teleport with the root). This is an intentional, vanilla-friendly fallback.
-- **Height Limit**: The script safely caps stack tracking at 20 players to prevent performance issues.
-- **Seat Desynchronization (Visual Jitter)**: You may notice a slight visual delay or "jitter" on the armor stand seats when the root player moves, especially at high speeds or with fast turns. This is **not a bug** — it is an inherent limitation of how Minecraft's client-server architecture works:
-  - The server updates the seat position via teleport (`modify pos`) each tick, and the client interpolates the movement. This creates a natural 1-2 tick delay between the root player's movement and the seat's visual update.
-  - **Why not use smooth interpolation or quaternions?** Minecraft entities do not expose quaternion rotation or client-side interpolation controls through Scarpet. The only available options are:
-    - **Teleport per tick** (current approach): Precise but has minor visual jitter.
-    - **Velocity-based movement** (`modify velocity`): Smoother visually but causes overshoot, oscillation, and is unreliable with gravity/collisions.
-    - **Native passenger mounting** (armor stand riding the player): Perfect sync but locks the seat to a fixed body offset — no control over stack height.
-  - After extensive testing, **per-tick teleportation** was chosen as the best balance between precision, reliability, and performance. The jitter is minimal during normal walking and only noticeable during fast movement or elytra flight.
- 
+## ⚠️ Limitations & Trade-offs
+
+| Limitation | Technical Explanation |
+| :--- | :--- |
+| 🌀 **Teleportation** | Long-distance teleports (Ender Pearl, Chorus) may temporarily dismount riders due to vanilla entity mechanics. |
+| 🌍 **Dimension Changes** | Crossing portals reorganizes the stack in the original dimension (riders don't teleport with the root). This is an intentional, safe fallback. |
+| 📏 **Height Limit** | Stack tracking is safely capped at 20 players to prevent performance degradation. |
+| 👁️ **Visual Jitter** | A slight 1-2 tick delay is normal. Scarpet cannot access client-side interpolation or quaternions. **Per-tick teleportation** was chosen as the most reliable method over velocity-based movement, which causes physics glitches and overshoot. |
+
+---
+
 <details>
 <summary>💡 <strong>The Vision: Why build this instead of just using the FSit mod?</strong></summary>
 <br>
-<p>This project was born out of a specific challenge for the <strong>Builtechraft</strong> server. My vision has always been to push the boundaries of what is possible in <em>pure vanilla Minecraft</em> using Datapacks and Scarpet, reducing the community's reliance on client-side mods.</p>
-
-<p>Recreating a feature like "player riding" is trivial for a mod, but a massive technical hurdle for a server-side script. Mods have access to client-side interpolation, custom entity mounting, and deep engine hooks. Scarpet, on the other hand, has to fight against Minecraft's vanilla mechanics (like entities forcefully dismounting on teleport, or the lack of smooth movement APIs).</p>
-
-<p>Building this script was about solving those exact puzzles: using efficient data structures (like linked lists for stack management), implementing crash-proof cycle detection, and creating smart fallbacks for dimension changes. </p>
-
-<p><strong>The result?</strong> A "mod-like" experience that requires <em>zero</em> downloads, <em>zero</em> modpacks, and <em>zero</em> client-side changes for the players. It proves that with creativity and deep knowledge of the game's mechanics, Datapacks and Scarpet can deliver sophisticated features while keeping the soul of Minecraft 100% intact.</p>
+<p>Born from a technical challenge on the <strong>Builtechraft</strong> server, this project pushes the limits of pure vanilla Minecraft. While mods easily handle player riding via client-side hooks, Scarpet must fight vanilla engine limitations (like forced dismounts and lack of smooth movement APIs).</p>
+<p>By utilizing efficient linked lists, crash-proof cycle detection, and smart fallbacks, this script delivers a "mod-like" experience with <strong>zero client downloads</strong>. It proves that deep knowledge of game mechanics can replicate complex features while keeping Minecraft's soul 100% intact.</p>
 </details>
-<br>
 
+<br>
 
 ## 🛠️ Technical Details
 
-For developers and server admins interested in how it works under the hood:
-- **Data Structure**: Uses a highly efficient Linked List (`global_child` / `global_parent` maps) for O(1) stack operations and reorganization.
-- **Cycle Detection**: The `_find_root()` function includes a hard limit of 64 iterations to guarantee no infinite loops can occur.
-- **Orphan Sweeping**: The `_sweep_orphans()` function runs every 200 ticks (10 seconds) to clean up any armor stands that lost their rider unexpectedly.
+| Component | Implementation |
+| :--- | :--- |
+| 🧠 **Data Structure** | Linked List (`global_child` / `global_parent` maps) for O(1) stack operations. |
+| 🛡️ **Cycle Detection** | `_find_root()` has a hard 64-iteration limit to guarantee no infinite loops. |
+| 🧹 **Orphan Sweeping** | `_sweep_orphans()` runs every 200 ticks (10s) to clean up lost armor stands. |
 
-## 📜 License
+---
 
-This project is licensed under the **MIT License**. You are free to use, modify, and distribute this script, provided you include the original copyright notice. See the [LICENSE](LICENSE) file for details.
+## 🗺️ Roadmap (TO-DO)
 
-## 🙏 Credits & Inspiration
+| Status | Goal |
+| :---: | :--- |
+| 🚧 | Port core logic to a pure Datapack for maximum vanilla compatibility (no Carpet required). |
+| 💡 | Replace the Scarpet right-click trigger with a vanilla item interaction (e.g., Fishing Rod or Carrot on a Stick). |
 
-- **Inspired by**: [FSit](https://modrinth.com/project/fsit) and [FSit Continued](https://modrinth.com/project/fsit-continued) mods.
-- **Built with**: [Carpet Mod](https://github.com/gnembon/fabric-carpet) and its powerful Scarpet API.
-- **Created by**: [@Tarquitet](https://github.com/Tarquitet)
+---
+
+## 📜 License & Credits
+
+This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for details.
+
+- **Inspired by:** [FSit](https://modrinth.com/project/fsit) and [FSit Continued](https://modrinth.com/
+project/fsit-continued)
+- **Built with:** [Carpet Mod](https://github.com/gnembon/fabric-carpet) Scarpet API
+- **Created by:** [@Tarquitet](https://github.com/Tarquitet)
 
 ## 🐛 Issues & Contributions
 
-- Found a bug or have a feature request? Please open an issue on the [GitHub Issues](https://github.com/Tarquitet/Ridable-Players-Scarpet/issues) page! (only fixed at the moment)  
-- Contributions and Pull Requests are always welcome. Please read [CONTRIBUTING.md](CONTRIBUTING8.md) before submitting.
-
-## TO-DO
-- Figuring out how to developing into a datapack (if someone don't want a carpet script or more vanilly friendly).
-- What item can be used to replace that "right-click" from scarpet?
+- Found a bug? Open an issue on the [GitHub Issues](https://github.com/Tarquitet/Ridable-Players-Scarpet/issues) page!
+- Contributions and Pull Requests are always welcome. Please read [CONTRIBUTING.md](CONTRIBUTING.md) before submitting.
 
 ---
 *Made with ❤️ for the Minecraft community.*
