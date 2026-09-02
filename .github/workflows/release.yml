@@ -1,0 +1,38 @@
+name: Automated Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  create-release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: Release ${{ github.ref_name }}
+          body: |
+            ## 🚀 Ridable Players ${{ github.ref_name }}
+            
+            Automated release of the latest stable version.
+            
+            ### 📦 Installation
+            1. Download `ride-players.sc` from the Assets below.
+            2. Place it in your world's `scripts/` folder.
+            3. Run `/script load ride-players` in-game.
+            
+            See [README.md](https://github.com/Tarquitet/Ridable-Players-Scarpet/blob/main/README.md) for full details.
+          files: |
+            ride-players.sc
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
