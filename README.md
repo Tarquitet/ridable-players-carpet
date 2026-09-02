@@ -8,15 +8,6 @@
 
 A lightweight, vanilla-friendly Scarpet script that allows players to ride on top of other players in vertical stacks. Inspired by the mechanics of **FSit** and **FSit Continued** mods, but built entirely with Carpet's Scarpet API.
 
-## 🎬 Demo
-
-<div align="center">
-  <a href="https://youtu.be/etgxicrdKrk" target="_blank">
-    <img src="https://img.youtube.com/vi/etgxicrdKrk/maxresdefault.jpg" alt="Ridable Players Demo" width="600" style="border-radius: 12px; box-shadow: 0 8px 16px rgba(0,0,0,0.3); transition: transform 0.2s;">
-  </a>
-  <p><em>Note: This video showcases an early development version of the script. The current release includes significant improvements in stability, crash protection, and stack reorganization.</em></p>
-</div>
-
 ## ✨ Features
 
 - 🏗️ **Vertical Stacking**: Right-click another player to mount on top of them. Multiple players can stack infinitely (up to a safe limit).
@@ -26,6 +17,21 @@ A lightweight, vanilla-friendly Scarpet script that allows players to ride on to
 - 🛡️ **Crash Protection**: Built-in anti-cycle detection prevents players from mounting their own stack, avoiding infinite loops and server crashes.
 - 🧹 **Auto-Cleanup**: Automatically detects and removes orphaned armor stands every 10 seconds to keep the world clean.
 - 🌍 **Vanilla-Friendly**: No client-side mods required. Works seamlessly on any server running the Carpet mod.
+
+---
+## Example image
+<div align="center">
+<img width="685" height="377" alt="{ADB135A3-3C68-4F51-AF54-28EB29525E2B}" src="https://github.com/user-attachments/assets/253b32e1-2238-4cd0-98d7-6baa4c10dda6" />
+</div>
+
+## 🎬 Demo
+
+<div align="center">
+  <a href="https://youtu.be/etgxicrdKrk" target="_blank">
+    <img src="https://img.youtube.com/vi/etgxicrdKrk/maxresdefault.jpg" alt="Ridable Players Demo" width="600" style="border-radius: 12px; box-shadow: 0 8px 16px rgba(0,0,0,0.3); transition: transform 0.2s;">
+  </a>
+  <p><em>Note: This video showcases an early development version of the script. The current release includes significant improvements in stability, crash protection, and stack reorganization.</em></p>
+</div>
 
 ## 📋 Requirements
 
@@ -97,3 +103,16 @@ This project is licensed under the **MIT License**. You are free to use, modify,
 
 ---
 *Made with ❤️ for the Minecraft community.*
+---
+<details>
+<summary>💡 <strong>The Vision: Why build this instead of just using the FSit mod?</strong></summary>
+<br>
+<p>This project was born out of a specific challenge for the <strong>Builtechraft</strong> server. My vision has always been to push the boundaries of what is possible in <em>pure vanilla Minecraft</em> using Datapacks and Scarpet, reducing the community's reliance on client-side mods.</p>
+
+<p>Recreating a feature like "player riding" is trivial for a mod, but a massive technical hurdle for a server-side script. Mods have access to client-side interpolation, custom entity mounting, and deep engine hooks. Scarpet, on the other hand, has to fight against Minecraft's vanilla mechanics (like entities forcefully dismounting on teleport, or the lack of smooth movement APIs).</p>
+
+<p>Building this script was about solving those exact puzzles: using efficient data structures (like linked lists for stack management), implementing crash-proof cycle detection, and creating smart fallbacks for dimension changes. </p>
+
+<p><strong>The result?</strong> A "mod-like" experience that requires <em>zero</em> downloads, <em>zero</em> modpacks, and <em>zero</em> client-side changes for the players. It proves that with creativity and deep knowledge of the game's mechanics, Datapacks and Scarpet can deliver sophisticated features while keeping the soul of Minecraft 100% intact.</p>
+</details>
+<br>
