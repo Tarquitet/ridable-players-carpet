@@ -27,7 +27,7 @@ A lightweight, vanilla-friendly Scarpet script that allows players to ride on to
 ## 📸 Showcase
 
 <div align="center">
-  <img width="685" alt="Ridable Players Early Screenshot" src="https://github.com/user-attachments/assets/253b32e1-2238-4cd0-98d7-6baa4c10dda6" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);"/>
+  <img width="600" alt="Ridable Players Early Screenshot" src="https://github.com/user-attachments/assets/253b32e1-2238-4cd0-98d7-6baa4c10dda6" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);"/>
   <p><em>Early concept screenshot showcasing the core stacking mechanic.</em></p>
 </div>
 
