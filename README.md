@@ -116,6 +116,7 @@ This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) f
 - **Inspired by:** [FSit](https://modrinth.com/project/fsit) and [FSit Continued](https://modrinth.com/project/fsit-continued)
 - **Built with:** [Carpet Mod](https://github.com/gnembon/fabric-carpet) Scarpet API
 - **Created by:** [@Tarquitet](https://github.com/Tarquitet)
+- **Assistant**: Qwen Studio (helping finding bugs & fixing them).
 
 ## 🐛 Issues & Contributions
 
