@@ -1,0 +1,12 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE / Editor folders
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Minecraft / Carpet local test files (if you test locally)
+scripts/*.sc.bak
